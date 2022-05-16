@@ -2,8 +2,16 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 var logger = require('morgan');
+var app = express();
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
+//Para utilizar variables de entorno
 require('dotenv').config();
 
 //Conexion a base de datos
@@ -15,10 +23,14 @@ mongoose.connect(uri)
 .then(()=>{console.log("Conexion a base de datos ESTABLECIDA...")})
 .catch(e=>{console.log(e)});
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
-var app = express();
+//Rutas
+var indexRouter = require('./routes/index');
+//var gameRouter = require('./routes/gameRoutes');
+
+
+app.use('/', indexRouter);
+//app.use('/game', gameRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,8 +42,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
