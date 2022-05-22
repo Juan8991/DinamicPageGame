@@ -1,0 +1,20 @@
+<header>
+       <button class="botton-back"><span><a href="/">Volver</a></span></button>
+       
+                    
+</header>
+<div class="contenedor-Juego">
+    
+    
+    {{#each gameById.gamers}}
+        <p class="juego">Nombre:{{name}}<br>
+        Id del Jugador:{{_id}}</p><br>
+    {{/each}}
+    {{#if gameById.winner}}
+        <p class="juego">Estado del juego: Juego Terminado<br>
+        Ganador: {{gameById.winner}}</p><br>
+    {{else}}
+        <p class="juego">Estado del juego: En progreso<br>
+        Ganador: No hay ganador Aún</p><br>
+    {{/if}}
+</div>

@@ -13,24 +13,27 @@ app.use(bodyParser.json())
 
 //Para utilizar variables de entorno
 require('dotenv').config();
-
+//
 //Conexion a base de datos
 const mongoose = require('mongoose');
 
 const uri=`mongodb+srv://${process.env.USERN}:${process.env.PASSWORD}@mycluster.edywy.mongodb.net/${process.env.DATABASENAME}?retryWrites=true&w=majority`;
 
-mongoose.connect(uri)
+mongoose.connect(uri,
+  {useNewUrlParser: true,
+  useUnifiedTopology: true}
+)
 .then(()=>{console.log("Conexion a base de datos ESTABLECIDA...")})
 .catch(e=>{console.log(e)});
 
 
 //Rutas
 var indexRouter = require('./routes/index');
-//var gameRouter = require('./routes/gameRoutes');
+//var gameRoutes = require('./routes/gameRoutes');
 
 
 app.use('/', indexRouter);
-//app.use('/game', gameRouter);
+//app.use('/game', gameRoutes);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

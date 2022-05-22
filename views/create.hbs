@@ -1,8 +1,15 @@
-<header class="header-go-back">
+<header>
        <button class="botton-back"><span><a href="/">Volver</a></span></button>
+       <ul>
+                {{#if gameId}}
+                    <p >Juego creado exitosamente!!
+                    <br>El ID del juego es:  {{gameId}}</p>
+                {{/if}}        
+       </ul>
+                    
 </header>
     <div class="contenedor">
-        <form method="POST" action="">
+        <form method="POST" action="/createGame">
             <h2>Ingrese el nombre de los jugadores</h2>
             <br>
             <h3> Primer jugador</h3>
@@ -10,9 +17,11 @@
             <h3> Segundo jugador</h3>
             <input type="text" placeholder="Introduzca el nombre" class="form-control my-2" id="gamer2" name="gamer2" required><br>
             <h3> Tercer jugador</h3>
-            <input type="text" placeholder="Introduzca el nombre" class="form-control my-2" id="gamer3" name="gamer3" required></label>
-            <button class="botton" type="submit">Guardar</button>
+            <input type="text" placeholder="Introduzca el nombre" class="form-control my-2" id="gamer3" name="gamer3" required><br>
+            <button class="botton" type="submit"><span>Crear juego</span></button>
 
         </form>
+
     </div>
+
         

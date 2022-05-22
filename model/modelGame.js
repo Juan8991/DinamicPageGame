@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //Define a schema
 const Schema = mongoose.Schema;
 
-// Define Game schema to create documents in Mongo DB
+// Definicion del esquema para la abse de datos
 const schemaGame = new Schema({
     type: {
         type: String, 
@@ -25,15 +25,9 @@ const schemaGame = new Schema({
     },
     winner: {
         type: String, 
-        default:"No winner yet"
+        default:""
     }
 });
-
-// Virtual schema to create a URL game/:id
-/* GameSchema.virtual('url').get(function() {
-    return '/game/' + this._id;
-}); */
-
-// Export model.
-const modelGame= mongoose.model('Game', schemaGame);
+//Exportacion del modelo
+const modelGame= mongoose.model('modelGame', schemaGame);
 module.exports = modelGame;

@@ -1,0 +1,28 @@
+<header class="header-go-back">
+       <button class="botton-back"><span><a href="/">Volver</a></span></button>
+</header>
+<div class="contenedor">
+    {{#if game}}
+        <h2> ID DEl JUEGO:{{game._id}}</h2>
+        
+        {{#each gameWithBets}}
+            <div class="contenedor-apuestas"><strong>Id del Jugador:{{id}}</strong><br>
+            <strong>Nombre del jugador:{{name}}</strong><br>
+            <strong>Número Obtenido: {{bet}} </strong><br></div>
+        {{/each}}
+        
+        <h1>Ganador: {{winner}}</h1>
+    {{else}}
+        <h1>QUE COMIENCE EL JUEGO!!</h1>
+
+    <form method="POST" action="/startGame">
+        <input type="text" placeholder="Introduzca el Id del juego" class="form-control my-2" id="gameId" name="gameId" required><br>
+        <button class="b-Play" type="submit"><span>Jugar</span></button>
+    </form>
+       
+    {{/if}}
+</div>
+
+
+            
+             

@@ -1,9 +1,5 @@
 
-body {
-	background: #f2f2f2;
-	font-family: 'Roboto', sans-serif;
-	min-height: 100vh;
-}
+
 
 a {
   color: var(--white);
@@ -22,10 +18,11 @@ body {
 	background: #000000;
 	font-family: 'Roboto', sans-serif;
 	min-height: 100vh;
+
 }
 
 .contenedor {
-  background:#141414;
+	background:#141414;
 	width: 1200px;
 	margin: auto;
 	padding: 100px 0;
@@ -33,10 +30,52 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-  background-image: url(../images/dados.jpg);
+  	background-image: url(../images/dados.jpg);
   
 }
-
+.contenedor-juego {
+	background:#975a9f;
+	width: 1200px;
+	margin: auto;
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.contenedor-apuestas {
+	background:#ffffff;
+	width: 1000px;
+	height: 100px;
+	margin: auto;
+	padding: 50px 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid #b601ce;
+}
+p.juego{
+	font-size: 34px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 80px;
+	text-transform: uppercase;
+	color: #ffffff;
+	border: 5px solid #b601ce;
+	padding: 5px 10px;
+	display: inline-block;
+}
+p{
+	font-size: 26px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 80px;
+	text-transform: uppercase;
+	color: #ffffff;
+	padding: 5px 10px;
+	display: inline-block;
+}
 h1 {
 	font-size: 58px;
 	font-weight: 500;
@@ -61,7 +100,7 @@ h2{
 }
 
 h3{
-  font-size: 13px;
+  	font-size: 13px;
 	font-weight: 500;
 	text-align: center;
 	margin-bottom: 50px;
@@ -98,6 +137,7 @@ h3{
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
+	
 }
 .botton:hover{
   background: #8b66d6;
@@ -108,7 +148,7 @@ h3{
 	transition: .3s ease all;
 }
 .botton-back {
-  margin-top: 10px;
+  	margin-top: 10px;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -131,7 +171,30 @@ h3{
   background: #b3aebb;
 }
 
-
+.b-Play {
+	margin-top: 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	height: 80px;
+	background: #be9efe;
+	color: rgb(0, 0, 0);
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 500;
+	border: purple;
+	cursor: pointer;
+	text-transform: uppercase;
+	transition: .3s ease all;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	  
+  }
+  .b-Play:hover{
+	background: #8b66d6;
+  }
 form input{
   width: 200px;
   height: 25px;
@@ -144,15 +207,15 @@ form li label{
 form li:last-of-type{
   justify-content: center;
 }
-
-.section-index{
-  width: 350px;
-  height: 130px;
-  text-align: center;
-  background:#c43121;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  margin: 0px 15px;
+.strong-er{
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 80px;
+	text-transform: uppercase;
+	color: #ff00f7;
+	border: 5px #ffffff;
+	padding: 5px 10px;
+	display: inline-block;
 }
+
